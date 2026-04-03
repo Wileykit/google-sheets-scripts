@@ -1,0 +1,10 @@
+# Google service account credentials - NEVER commit these
+*.json
+secrets/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
