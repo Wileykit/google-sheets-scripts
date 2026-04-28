@@ -117,8 +117,12 @@ def dataframe_to_sheet(
 
 if __name__ == "__main__":
     import os
-    CREDENTIALS_FILE = os.environ.get("GOOGLE_CREDENTIALS_FILE", "/Users/kpw3/Downloads/coding-club-project-465518-b8b1326a460d.json")
-    SPREADSHEET_ID   = os.environ.get("SPREADSHEET_ID", "1Wtt6fZwTsxiiz54dtGiuNmqiCF-d0R3W0kbvPgU04b4")
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
+    CREDENTIALS_FILE = os.getenv("GOOGLE_CREDENTIALS_PATH")
+    SPREADSHEET_ID   = os.getenv("SPREADSHEET_ID")
 
     client = get_client(CREDENTIALS_FILE)
 
